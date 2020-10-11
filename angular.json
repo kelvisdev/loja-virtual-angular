@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineTemplate": true,
+          "inlineTemplate": false,
           "inlineStyle": true,
           "skipTests": true
         },
@@ -104,6 +104,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "loja-virtual-angular"
+    }
+  },
+  "defaultProject": "loja-virtual-angular",
+  "cli": {
+    "analytics": "de100772-d5e7-41b2-b09c-38ae7349422a"
+  }
 }
