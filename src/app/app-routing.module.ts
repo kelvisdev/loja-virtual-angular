@@ -1,3 +1,4 @@
+import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
 import { ContatoComponent } from './institucional/contato/contato.component';
 import { HomeComponent } from './navegacao/home/home.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'contato', component: ContatoComponent },
   { path: 'sobre', component: SobreComponent },
   { path: 'feature-data-binding', component: DataBindingComponent },
+  { path: 'produtos', component: ListaProdutoComponent },
 ];
 
 @NgModule({
