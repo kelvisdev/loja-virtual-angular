@@ -43,7 +43,19 @@
             id="cpf"
             placeholder="CPF (requerido)"
             formControlName="cpf"
+            cpf
+            [textMask]="{ mask: MASKS.cpf.textMask }"
           />
+          <span
+            *ngIf="
+              cadastroForm.get('cpf')?.errors?.cpf &&
+              (cadastroForm.get('cpf')?.dirty ||
+                cadastroForm.get('cpf')?.touched)
+            "
+            class="text-danger"
+          >
+            <p>CPF inválido</p>
+          </span>
         </div>
       </div>
 
@@ -57,14 +69,13 @@
             placeholder="Email (requerido)"
             formControlName="email"
             [ngClass]="{
-                'is-invalid':
-                  cadastroForm.get('email')?.errors &&
-                  (cadastroForm.get('email')?.dirty ||
-                    cadastroForm.get('email')?.touched)
-              }"
+              'is-invalid':
+                cadastroForm.get('email')?.errors &&
+                (cadastroForm.get('email')?.dirty ||
+                  cadastroForm.get('email')?.touched)
+            }"
           />
 
-          
           <span
             *ngIf="
               cadastroForm.get('email')?.errors?.required &&
@@ -76,7 +87,6 @@
             <p>Preencha o campo email</p>
           </span>
 
-          
           <span
             *ngIf="
               cadastroForm.get('email')?.errors?.email &&
@@ -100,6 +110,17 @@
             placeholder="Senha (requerido)"
             formControlName="senha"
           />
+
+          <span
+            *ngIf="
+              cadastroForm.get('senha')?.errors?.rangeLength &&
+              (cadastroForm.get('senha')?.dirty ||
+                cadastroForm.get('senha')?.touched)
+            "
+            class="text-danger"
+          >
+            <p>Tamanho inválido</p>
+          </span>
         </div>
       </div>
 

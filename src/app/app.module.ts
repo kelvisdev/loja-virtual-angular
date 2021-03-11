@@ -17,6 +17,7 @@ import { registerLocaleData } from '@angular/common';
 import localPt from '@angular/common/locales/pt';
 import { NgBrazil } from 'ng-brazil'; 
 import { TextMaskModule } from 'angular2-text-mask';
+import { CustomFormsModule } from 'ng2-validation'
 import { CadastroComponent } from './demos/reactive-forms/cadastro/cadastro.component'
 
 registerLocaleData(localPt);
@@ -40,7 +41,8 @@ registerLocaleData(localPt);
     HttpClientModule,
     ReactiveFormsModule,
     TextMaskModule,
-    NgBrazil
+    NgBrazil,
+    CustomFormsModule
   ],
   providers: [
     ProdutoService,
