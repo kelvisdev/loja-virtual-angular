@@ -1,0 +1,146 @@
+<div class="container main-container">
+  <h4>Demo Cadastro</h4>
+  <hr />
+
+  <form novalidate (ngSubmit)="adicionarUsuario()" [formGroup]="cadastroForm">
+    <div class="form-horizontal">
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="nome">Nome Completo</label>
+        <div class="col-md-10">
+          <input
+            class="form-control"
+            type="text"
+            id="nome"
+            placeholder="Nome (requerido)"
+            formControlName="nome"
+            [ngClass]="{
+              'is-invalid':
+                cadastroForm.get('nome')?.errors &&
+                (cadastroForm.get('nome')?.dirty ||
+                  cadastroForm.get('nome')?.touched)
+            }"
+          />
+
+          <span
+            *ngIf="
+              cadastroForm.get('nome')?.errors &&
+              (cadastroForm.get('nome')?.dirty ||
+                cadastroForm.get('nome')?.touched)
+            "
+            class="text-danger"
+          >
+            <p>Preencha o campo nome</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="cpf">CPF</label>
+        <div class="col-md-10">
+          <input
+            class="form-control"
+            type="text"
+            id="cpf"
+            placeholder="CPF (requerido)"
+            formControlName="cpf"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="email">E-mail</label>
+        <div class="col-md-10">
+          <input
+            class="form-control"
+            type="text"
+            id="email"
+            placeholder="Email (requerido)"
+            formControlName="email"
+            [ngClass]="{
+                'is-invalid':
+                  cadastroForm.get('email')?.errors &&
+                  (cadastroForm.get('email')?.dirty ||
+                    cadastroForm.get('email')?.touched)
+              }"
+          />
+
+          
+          <span
+            *ngIf="
+              cadastroForm.get('email')?.errors?.required &&
+              (cadastroForm.get('email')?.dirty ||
+                cadastroForm.get('email')?.touched)
+            "
+            class="text-danger"
+          >
+            <p>Preencha o campo email</p>
+          </span>
+
+          
+          <span
+            *ngIf="
+              cadastroForm.get('email')?.errors?.email &&
+              (cadastroForm.get('email')?.dirty ||
+                cadastroForm.get('email')?.touched)
+            "
+            class="text-danger"
+          >
+            <p>E-mail com formato inválido</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="senha">Senha</label>
+        <div class="col-md-10">
+          <input
+            class="form-control"
+            type="password"
+            id="senha"
+            placeholder="Senha (requerido)"
+            formControlName="senha"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label" for="senhaConfirmacao"
+          >Confirme a Senha</label
+        >
+        <div class="col-md-10">
+          <input
+            class="form-control"
+            type="password"
+            id="senhaConfirmacao"
+            placeholder="Confirmar Senha (requerido)"
+            formControlName="senhaConfirmacao"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-4 col-md-offset-2">
+          <span>
+            <button class="btn btn-success" id="registrar" type="submit">
+              Registrar
+            </button>
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-4 col-md-offset-2">
+          <p>Formulario valido: {{ cadastroForm.valid }}</p>
+          <p>Formulario tocado: {{ cadastroForm.touched }}</p>
+          <p>Formulario sujo: {{ cadastroForm.dirty }}</p>
+        </div>
+      </div>
+
+      <pre>
+        <p>
+            Formulario: {{ formResult }}
+        </p>
+      </pre>
+    </div>
+  </form>
+</div>
