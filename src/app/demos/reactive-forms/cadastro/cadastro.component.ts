@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgBrazilValidators } from 'ng-brazil';
 import { Usuario } from './models/usuario';
 
 @Component({
   selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styles: [
-  ]
+  templateUrl: './cadastro.component.html'
 })
 export class CadastroComponent implements OnInit {
 
@@ -19,7 +18,7 @@ export class CadastroComponent implements OnInit {
   ngOnInit(): void {
     this.cadastroForm = this.fb.group({
       nome: ['', Validators.required],
-      cpf: [''],
+      cpf: ['', [Validators.required, NgBrazilValidators.cpf]],
       email: ['',[Validators.required, Validators.email]],
       senha: [''],
       senhaConfirmacao: ['']

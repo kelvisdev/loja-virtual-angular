@@ -15,6 +15,8 @@ import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.co
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localPt from '@angular/common/locales/pt';
+import { NgBrazil } from 'ng-brazil'; 
+import { TextMaskModule } from 'angular2-text-mask';
 import { CadastroComponent } from './demos/reactive-forms/cadastro/cadastro.component'
 
 registerLocaleData(localPt);
@@ -36,7 +38,9 @@ registerLocaleData(localPt);
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TextMaskModule,
+    NgBrazil
   ],
   providers: [
     ProdutoService,
