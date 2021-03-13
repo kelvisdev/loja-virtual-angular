@@ -4,7 +4,6 @@ import { DataBindingComponent } from './demos/data-binding/data-binding.componen
 import { CadastroComponent } from './demos/reactive-forms/cadastro/cadastro.component';
 import { ContatoComponent } from './institucional/contato/contato.component';
 import { HomeComponent } from './navegacao/home/home.component';
-import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
 
 
 const routes: Routes = [
@@ -12,9 +11,12 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'contato', component: ContatoComponent },
   { path: 'sobre', component: HomeComponent },
-  { path: 'feature-data-binding', component: DataBindingComponent },
-  { path: 'produtos', component: ListaProdutoComponent },
+  { path: 'feature-data-binding', component: DataBindingComponent },  
   { path: 'cadastro', component: CadastroComponent },
+  { path: 'produtos', 
+          loadChildren: () => import('./demos/arquitetura-componentes/produto.module')
+          .then(m => m.ProdutoModule) 
+  }
 ];
 
 @NgModule({
