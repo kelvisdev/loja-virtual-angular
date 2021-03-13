@@ -6,7 +6,8 @@
       "valor": 15.90,
       "promocao": false,
       "valorPromo": 0,
-      "imagem": "mouse.jpg"
+      "imagem": "mouse.jpg",
+      "ativo": true
     },
     {
       "id": 2,
@@ -62,7 +63,8 @@
       "valor": 5.50,
       "promocao": false,
       "valorPromo": 0,
-      "imagem": "mousepad.jpg"
+      "imagem": "mousepad.jpg",
+      "ativo": true
     },
     {
       "id": 9,
@@ -70,7 +72,8 @@
       "valor": 300.00,
       "promocao": false,
       "valorPromo": 0,
-      "imagem": "gopro.jpg"
+      "imagem": "gopro.jpg",
+      "ativo": true
     }
   ],
   "posts": [
