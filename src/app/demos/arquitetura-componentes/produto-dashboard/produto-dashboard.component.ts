@@ -21,7 +21,6 @@ export class ProdutoDashboardComponent implements OnInit, AfterViewInit {
   @ViewChildren(ProdutoCardDetalheComponent) botoes: QueryList<ProdutoCardDetalheComponent>;
 
   constructor(
-    private produtoService: ProdutoVitrineService,
     private route: ActivatedRoute
   ) { }
     
@@ -30,10 +29,12 @@ export class ProdutoDashboardComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.produtos = this.route.snapshot.data['produtos'];
+    
+    console.log(this.route.snapshot.data['teste']);
   }
 
   ngAfterViewInit(): void {
-    console.log('Objeto do contador: ', this.contador.contadorAtivos());
+    // console.log('Objeto do contador: ', this.contador.contadorAtivos());
     
 
     let clickText: Observable<any> = fromEvent(this.mensagemTela.nativeElement, 'click');
@@ -43,9 +44,9 @@ export class ProdutoDashboardComponent implements OnInit, AfterViewInit {
       return;
     });
 
-    console.log(this.botoes);
+    // console.log(this.botoes);
     this.botoes.forEach(p => {
-      console.log(p.produto);      
+      // console.log(p.produto);      
     })
   }
 
