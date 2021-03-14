@@ -23,7 +23,6 @@ registerLocaleData(localPt);
 @NgModule({
   declarations: [
     AppComponent,
-  
     SobreComponent,
     ContatoComponent,
     DataBindingComponent,
@@ -43,7 +42,8 @@ registerLocaleData(localPt);
   ],
   providers: [
     ProdutoService,
-    {provide: APP_BASE_HREF, useValue: '/admin/'}
+    // {provide: APP_BASE_HREF, useValue: '/admin/'}
+    // {provide: APP_BASE_HREF, useValue: '/'}
   ],
   bootstrap: [AppComponent]
 })
