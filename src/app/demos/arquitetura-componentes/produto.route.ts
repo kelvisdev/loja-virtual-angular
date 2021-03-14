@@ -3,13 +3,21 @@ import { ProdutoDashboardComponent } from './produto-dashboard/produto-dashboard
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import { ProdutosResolve } from './services/produtos.resolve';
 
 
 const routes: Routes = [
     {
         path: '', component: ProdutoAppComponent,
         children: [
-            { path: '', component: ProdutoDashboardComponent },
+            { path: '', redirectTo: 'todos' },
+            { 
+                path: ':estado', 
+                component: ProdutoDashboardComponent,
+                resolve: {
+                    produtos: ProdutosResolve
+                } 
+            },
             { path: 'editar/:id', component: EditarProdutoComponent }
         ]
     },

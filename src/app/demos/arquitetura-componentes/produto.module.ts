@@ -8,6 +8,7 @@ import { ProdutoCountComponent } from './components/produto-count/produto-count.
 import { ProdutoCardDetalheComponent } from './components/produto-card-detalhe/produto-card-detalhe.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 import { ProdutoVitrineService } from './services/produto-vitrine.service';
+import { ProdutosResolve } from './services/produtos.resolve';
 registerLocaleData(localPt);
 
 
@@ -25,7 +26,8 @@ registerLocaleData(localPt);
     ],
     exports: [],
     providers: [
-        ProdutoVitrineService
+        ProdutoVitrineService,
+        ProdutosResolve
     ]
 })
 export class ProdutoModule {}

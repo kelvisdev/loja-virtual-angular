@@ -1,7 +1,7 @@
 import { ProdutoVitrine } from './../models/produto-vitrine';
 import { ProdutoVitrineService } from './../services/produto-vitrine.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-produto',
@@ -16,7 +16,8 @@ export class EditarProdutoComponent implements OnInit {
   // Dados da rota ativa
   constructor(
     private route: ActivatedRoute,
-    private produtoService: ProdutoVitrineService
+    private produtoService: ProdutoVitrineService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,5 +29,10 @@ export class EditarProdutoComponent implements OnInit {
     );
   }
 
-  salvar() {}
+  salvar() {
+    // fazer comunicação com o backend
+
+    this.router.navigate(['/produtos']);
+    // this.router.navigateByUrl('/produtos');
+  }
 }
