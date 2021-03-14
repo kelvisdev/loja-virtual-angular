@@ -62,7 +62,7 @@ export class ProdutoVitrineService {
     }
     
     obterPorId(id: number): ProdutoVitrine | undefined {
-        const produto = this.produtos.find((produto) => produto.id === id);
+        const produto = this.produtos.find((produto) => produto.id == id);
 
         return produto ? produto : undefined;
     }
