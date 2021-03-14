@@ -1,9 +1,10 @@
+import { ProdutoVitrineService } from './../services/produto-vitrine.service';
 import { ProdutoCardDetalheComponent } from './../components/produto-card-detalhe/produto-card-detalhe.component';
 import { ProdutoCountComponent } from './../components/produto-count/produto-count.component';
 import { fromEvent, Observable } from 'rxjs';
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { Produto } from 'src/app/produtos/produto';
 import { ProdutoService } from 'src/app/produtos/produtos.service';
+import { ProdutoVitrine } from '../models/produto-vitrine';
 
 @Component({
   selector: 'app-produto-dashboard',
@@ -18,19 +19,13 @@ export class ProdutoDashboardComponent implements OnInit, AfterViewInit {
 
   @ViewChildren(ProdutoCardDetalheComponent) botoes: QueryList<ProdutoCardDetalheComponent>;
 
-  constructor(private produtoService: ProdutoService) { }
+  constructor(private produtoService: ProdutoVitrineService) { }
     
 
-  public produtos: Produto[];
+  public produtos: ProdutoVitrine[];
 
   ngOnInit(): void {
-    this.produtoService.obterProdutos()
-      .subscribe(p => {
-        this.produtos = p;
-        console.log(p);
-      }, (error: any) => {
-        console.log(error);
-      });
+    this.produtos = this.produtoService.obterTodos('');
   }
 
   ngAfterViewInit(): void {
@@ -50,7 +45,7 @@ export class ProdutoDashboardComponent implements OnInit, AfterViewInit {
     })
   }
 
-  mudarStatus(event: Produto) {
+  mudarStatus(event: ProdutoVitrine) {
     event.ativo = !event.ativo;
   }
 

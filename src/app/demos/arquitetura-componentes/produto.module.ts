@@ -7,6 +7,7 @@ import localPt from '@angular/common/locales/pt';
 import { ProdutoCountComponent } from './components/produto-count/produto-count.component';
 import { ProdutoCardDetalheComponent } from './components/produto-card-detalhe/produto-card-detalhe.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import { ProdutoVitrineService } from './services/produto-vitrine.service';
 registerLocaleData(localPt);
 
 
@@ -22,6 +23,9 @@ registerLocaleData(localPt);
         CommonModule,
         ProdutoRoutingModule
     ],
-    exports: []
+    exports: [],
+    providers: [
+        ProdutoVitrineService
+    ]
 })
 export class ProdutoModule {}

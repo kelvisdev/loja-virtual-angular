@@ -1,3 +1,4 @@
+import { ProdutoVitrine } from './../../models/produto-vitrine';
 import { Component, Input } from "@angular/core";
 import { Produto } from "src/app/produtos/produto";
 
@@ -16,11 +17,11 @@ import { Produto } from "src/app/produtos/produto";
 
 export class ProdutoCountComponent {
     @Input()
-    produtos: Produto[];
+    produtos: ProdutoVitrine[];
 
     contadorAtivos(): number {
         if (!this.produtos) return 0;
 
-        return this.produtos.filter((produto: Produto) => produto.ativo).length;
+        return this.produtos.filter((produto: ProdutoVitrine) => produto.ativo).length;
     }
 }

@@ -1,3 +1,4 @@
+import { ProdutoVitrine } from './../../models/produto-vitrine';
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 import { Produto } from "src/app/produtos/produto";
 
@@ -8,7 +9,7 @@ import { Produto } from "src/app/produtos/produto";
 
 export class ProdutoCardDetalheComponent {
     @Input()
-    produto: Produto;
+    produto: ProdutoVitrine;
 
     @Output()
     status: EventEmitter<any> = new EventEmitter();
