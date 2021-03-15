@@ -17,6 +17,8 @@ import { NgBrazil } from 'ng-brazil';
 import { TextMaskModule } from 'angular2-text-mask';
 import { CustomFormsModule } from 'ng2-validation'
 import { CadastroComponent } from './demos/reactive-forms/cadastro/cadastro.component';
+import { AuthGuard } from './services/app.guard';
+import { CadastroGuard } from './services/cadastro.guard';
 
 registerLocaleData(localPt);
 
@@ -42,6 +44,8 @@ registerLocaleData(localPt);
   ],
   providers: [
     ProdutoService,
+    AuthGuard,
+    CadastroGuard
     // {provide: APP_BASE_HREF, useValue: '/admin/'}
     // {provide: APP_BASE_HREF, useValue: '/'}
   ],
