@@ -7,11 +7,12 @@ import { CadastroComponent } from './demos/reactive-forms/cadastro/cadastro.comp
 import { ContatoComponent } from './institucional/contato/contato.component';
 import { HomeComponent } from './navegacao/home/home.component';
 import { CadastroGuard } from './services/cadastro.guard';
+import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo:'/home', pathMatch: 'full' },  
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent },  
   { path: 'contato', component: ContatoComponent },
   { path: 'sobre', component: HomeComponent },
   { path: 'feature-data-binding', component: DataBindingComponent },  
@@ -26,6 +27,8 @@ const routes: Routes = [
           canLoad: [AuthGuard],
           canActivate: [AuthGuard]
   },
+
+  { path: 'filmes', component: FilmesComponent },
 
   { path: '**', component: NotFoundComponent }
 ];

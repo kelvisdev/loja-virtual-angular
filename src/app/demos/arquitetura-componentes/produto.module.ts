@@ -3,12 +3,14 @@ import { ProdutoRoutingModule } from './produto.route';
 import { ProdutoDashboardComponent } from './produto-dashboard/produto-dashboard.component';
 import { CommonModule, registerLocaleData } from "@angular/common";
 import { NgModule } from "@angular/core";
-import localPt from '@angular/common/locales/pt';
+
 import { ProdutoCountComponent } from './components/produto-count/produto-count.component';
 import { ProdutoCardDetalheComponent } from './components/produto-card-detalhe/produto-card-detalhe.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 import { ProdutoVitrineService } from './services/produto-vitrine.service';
 import { ProdutosResolve } from './services/produtos.resolve';
+
+import localPt from '@angular/common/locales/pt';
 registerLocaleData(localPt);
 
 

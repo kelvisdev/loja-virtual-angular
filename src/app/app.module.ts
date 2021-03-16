@@ -1,3 +1,4 @@
+import { FilmesComponent } from './demos/pipes/filmes/filmes.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { ProdutoService } from './produtos/produtos.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,7 +13,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
-import localPt from '@angular/common/locales/pt';
 import { NgBrazil } from 'ng-brazil'; 
 import { TextMaskModule } from 'angular2-text-mask';
 import { CustomFormsModule } from 'ng2-validation'
@@ -20,7 +20,11 @@ import { CadastroComponent } from './demos/reactive-forms/cadastro/cadastro.comp
 import { AuthGuard } from './services/app.guard';
 import { CadastroGuard } from './services/cadastro.guard';
 
+import localPt from '@angular/common/locales/pt';
+import { ImageFormaterPipe } from './demos/pipes/filmes/image.pipe';
+import { FileSizePipe } from './demos/pipes/filmes/filesize.pipe';
 registerLocaleData(localPt);
+
 
 @NgModule({
   declarations: [
@@ -30,6 +34,9 @@ registerLocaleData(localPt);
     DataBindingComponent,
     ListaProdutoComponent,
     CadastroComponent,
+    FilmesComponent,    
+    FileSizePipe,
+    ImageFormaterPipe
   ],
   imports: [
     BrowserModule,
